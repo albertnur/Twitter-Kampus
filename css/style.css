@@ -206,6 +206,7 @@ div.left-align{
     div.block{
         padding: 0% 10%;
         padding-top: 25%;
+        text-align: left;
     }
     div.heading{
         font-size: 3em;
