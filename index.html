@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+	<title>Twitter Kampus</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+		<nav>
+			<ul class="topnav" id="myTopnav">
+				<li class="title"><a href="index.html">Twitter Kampus</a></li>
+				<li><a href="tentang.html">Tentang</a></li>
+				<li><a href="aplikasi.html">Aplikasi</a></li>
+				<li><a href="kontak.html">Kontak</a></li>
+				<li class="icon">
+					<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+				</li>
+			</ul>
+		</nav>
+
+
+		<div class="block tentang">
+			<div class="heading">Apa sih Twitter Kampus?</div>
+			<div class="content">
+				<div class="shortdesc">Twitter Kampus adalah situs yang dikembangkan untuk penelitian terkait implementasi Text Mining dalam analisis sentimen perguruan tinggi swasta melalui media sosial Twitter.</div>
+				<div class="readmore"><a href="#">baca lebih lanjut...</a></div>
+			</div>
+		</div>
+
+	
+	<div class="block next">
+
+		<div class="imageside imagehalf left">
+			<img src="sentiment-analysis.png" alt="" width="100%" align="left">
+		</div>
+		<div class="bodyText bodyhalf">
+			<div class="heading">Aplikasi Analisis Sentimen</div>
+			<div class="content">
+				<div class="shortdesc">
+					Analisis sentimen merupakan salah satu teknik analisis terhadap data-data tidak terstruktur seperti opini, ulasan, emosi, sentimen dan lain sebagainya. Aplikasi analisis sentimen yang dikembangkan dapat memberikan informasi seputar klasifikasi tweet positif dan negatif, juga faktor-faktor dari tiap kata kunci dalam tweet.
+				</div>
+				<div class="readmore"><a href="#">baca lebih lanjut...</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="block kontak">
+		<div class="bodyText">
+			<div class="heading">Kontak saya</div>
+			<div class="content">
+				<div class="shortdesc">
+					Aplikasi web ini dikembangkan sebagai bentuk penelitian tugas akhir mahasiswa S1 jurusan Teknik Informatika yang dibawahi oleh Fakultas Sains dan Teknologi Universitas Ma Chung.
+					Anda bisa menghubungi saya, mahasiswa yang terlibat dalam penelitian dan pembuatan aplikasi melalui email dan media lainnya. <br><br>
+					Nama : Benny Hartono <br>
+					Email : djaka.tingkir2@gmail.com <br>
+					Github : github.com/jialingkun<br>
+					Nama Instansi : Universitas Ma Chung<br>
+					Email Fakultas : fst@machung.ac.id
+				</div>
+				<div class="readmore"><a href="#">baca lebih lanjut...</a></div>
+			</div>
+		</div>
+		<div class="imageside left">
+			<img class="bennyhome" src="benny.jpg" align="right">
+		</div>
+	</div>
+	<footer>
+		<div>Copyright © 2017 Benny Hartono</div>
+	</footer>
+
+</body>
+
+<script>
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
+</script>
+</html>
