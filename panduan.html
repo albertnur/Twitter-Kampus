@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+	<title>Twitter Kampus</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="document">
+	<nav>
+		<ul class="topnav" id="myTopnav">
+			<li class="title"><a href="index.html"><img src="logohorizontalmid.png"></a></li>
+			<li><a href="tentang.html">Tentang</a></li>
+			<li class="active"><a href="panduan.html">Panduan</a></li>
+			<li><a href="kontak.html">Kontak</a></li>
+			<li><a href="http://127.0.0.1:6105">Aplikasi</a></li>
+			<li class="icon">
+				<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+			</li>
+		</ul>
+	</nav>
+
+
+	<div class="blockDocument">
+
+		<div class="headingDocument">Tahap kerja <hr></div>
+		<div class="content">
+			<div class="longdesc">Aplikasi analisis sentimen ini bekerja dengan tahapan: <br>
+				1. Mengambil tweet terbaru dalam jangka 1 minggu dengan menggunakan teknologi Twitter Search API <br>
+				2. Membersihkan tweet, seperti misalnya menghilangkan hyperlink, tanda baca, emoticon, huruf kapital, dan kata umum seperti 'dan', 'kamu', 'aku', 'yang', dan lain-lain<br>
+				4. Menggunakan algoritma Naive Bayes Classifier untuk mengelompokan tiap tweet dalam sentimen negatif dan positif<br>
+				5. Proses analisis faktor untuk mengelompokan beberapa trend kata yang ada pada sentimen positif dan negatif
+			</div>
+		</div>
+
+
+		<div class="headingDocument">Panduan Keluaran<hr></div>
+		<div class="content">
+			<div class="longdesc">
+				<b>1. Klasifikasi</b> <br>
+				Memunculkan semua tweet yang berhasil diolah dan pengelompokannya ke dalam sentimen positif dan negatif. Sentimen adalah opini, emosi atau ulasan. Sentimen positif mengacu pada tweet yang sifatnya menyerukan kelebihan-kelebihan perguruan tinggi ataupun emosi positif seperti bangga dan senang. Sentimen negatif merupakan tweet yang menyebutkan kekurangan perguruan tinggi ataupun emosi negatif.<br>
+				<b> 2. Analisis Faktor</b> <br>
+				Aplikasi akan berusaha menentukan istilah-istilah trend dalam kumpulan tweet yang diolah. Beberapa kumpulan istilah ini kemudian akan dikelompokan dalam golongan-golongan yang disebut 'faktor'. Faktor dihitung berdasarkan keterkaitan satu istilah dengan istilah lain. Keterkaitan ini dapat dihitung dari berapa kali suatu istilah muncul bersamaan dengan istilah lain dalam tweet yang sama. <br>
+				Proses analisis faktor ini akan memunculkan keluaran berupa kumpulan istilah trend dan frekuensi kemunculannya, juga dalam faktor mana saja istilah-istilah tersebut digolongkan.
+			</div>
+		</div>
+
+		<div class="headingDocument">Panduan Masukan <hr></div>
+		<div class="content">
+			<div class="longdesc">
+				<b>1. Topik Perguruan Tinggi </b><br>
+				Menentukan perguruan tinggi swasta mana yang menjadi topik utama untuk proses analisis sentimen <br>
+				<b>2. Jumlah tweet yang diambil</b> <br>
+				Berapa data tweet yang akan diambil dari twitter secara otomatis. Ingat bahwa aplikasi hanya dapat mengambil tweet terbaru dalam jangka waktu satu minggu. Jika tweet yang dapat diambil lebih sedikit dari yang diminta, aplikasi akan mengambil tweet terbanyak yang dapat diambil untuk proses berikutnya. <br>
+				<b>3. Jumlah faktor</b><br>
+				Jumlah faktor mengacu pada berapa faktor kumpulan istilah trend akan dikelompokan. Untuk memahami apa itu faktor, silahkan baca panduan keluaran.<br>
+				<b>4. sparse threshold</b><br>
+				Karena tujuan akhir dari analisis faktor adalah untuk mengambil istilah-istilah trend, maka istilah yang hanya muncul sedikit harus diseleksi dan dihilangkan dari proses komputasi. Sparse threshold mengacu pada bobot kemunculan istilah dalam tiap tweets. Semakin besar nilai sparse threshold, semakin banyak istilah yang lolos seleksi. <br>
+				Perhitungan sparse threshold bisa dijelaskan sebagai berikut: <br>
+				Ada 300 tweets yang akan dikomputasi.<br>
+				Bila sparse threshold yang diinginkan adalah 0.99 maka istilah dengan bobot 0.01 harus dihilangkan. <br>
+				Istilah dengan bobot 0.01 adalah istilah dengan frekuensi kemunculan : 300 tweets x 0.01 = 3 <br>
+				Itu artinya istilah yang muncul di 3 tweet atau kurang akan diabaikan sehingga yang dimaksud istilah trend hanyalah istilah yang muncul di lebih dari 3 tweet.
+			</div>
+		</div>
+
+		
+
+		
+	</div>
+
+
+	
+	
+	<footer>
+		<div>Copyright © 2017 Benny Hartono</div>
+	</footer>
+
+</body>
+
+<script>
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
+</script>
+</html>
