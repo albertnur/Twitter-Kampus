@@ -14,13 +14,12 @@
 			<li><a href="tentang.html">Tentang</a></li>
 			<li class="active"><a href="panduan.html">Panduan</a></li>
 			<li><a href="kontak.html">Kontak</a></li>
-			<li><a href="http://127.0.0.1:6105">Aplikasi</a></li>
+			<li><a href="http://127.0.0.1:6105" target="blank">Aplikasi</a></li>
 			<li class="icon">
 				<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
 			</li>
 		</ul>
 	</nav>
-
 
 	<div class="blockDocument">
 
@@ -35,41 +34,63 @@
 		</div>
 
 
-		<div class="headingDocument">Panduan Keluaran<hr></div>
-		<div class="content">
-			<div class="longdesc">
-				<b>1. Klasifikasi</b> <br>
-				Memunculkan semua tweet yang berhasil diolah dan pengelompokannya ke dalam sentimen positif dan negatif. Sentimen adalah opini, emosi atau ulasan. Sentimen positif mengacu pada tweet yang sifatnya menyerukan kelebihan-kelebihan perguruan tinggi ataupun emosi positif seperti bangga dan senang. Sentimen negatif merupakan tweet yang menyebutkan kekurangan perguruan tinggi ataupun emosi negatif.<br>
-				<b> 2. Analisis Faktor</b> <br>
-				Aplikasi akan berusaha menentukan istilah-istilah trend dalam kumpulan tweet yang diolah. Beberapa kumpulan istilah ini kemudian akan dikelompokan dalam golongan-golongan yang disebut 'faktor'. Faktor dihitung berdasarkan keterkaitan satu istilah dengan istilah lain. Keterkaitan ini dapat dihitung dari berapa kali suatu istilah muncul bersamaan dengan istilah lain dalam tweet yang sama. <br>
-				Proses analisis faktor ini akan memunculkan keluaran berupa kumpulan istilah trend dan frekuensi kemunculannya, juga dalam faktor mana saja istilah-istilah tersebut digolongkan.
-			</div>
-		</div>
+		
 
 		<div class="headingDocument">Panduan Masukan <hr></div>
 		<div class="content">
+		<div class="imageside image-content right">
+			<img src="input.png" align="right" width="100%">
+		</div>
 			<div class="longdesc">
 				<b>1. Topik Perguruan Tinggi </b><br>
 				Menentukan perguruan tinggi swasta mana yang menjadi topik utama untuk proses analisis sentimen <br>
 				<b>2. Jumlah tweet yang diambil</b> <br>
 				Berapa data tweet yang akan diambil dari twitter secara otomatis. Ingat bahwa aplikasi hanya dapat mengambil tweet terbaru dalam jangka waktu satu minggu. Jika tweet yang dapat diambil lebih sedikit dari yang diminta, aplikasi akan mengambil tweet terbanyak yang dapat diambil untuk proses berikutnya. <br>
 				<b>3. Jumlah faktor</b><br>
-				Jumlah faktor mengacu pada berapa faktor kumpulan istilah trend akan dikelompokan. Untuk memahami apa itu faktor, silahkan baca panduan keluaran.<br>
+				Jumlah faktor mengacu pada berapa faktor kumpulan istilah trend akan dikelompokan.<br>
 				<b>4. sparse threshold</b><br>
 				Karena tujuan akhir dari analisis faktor adalah untuk mengambil istilah-istilah trend, maka istilah yang hanya muncul sedikit harus diseleksi dan dihilangkan dari proses komputasi. Sparse threshold mengacu pada bobot kemunculan istilah dalam tiap tweets. Semakin besar nilai sparse threshold, semakin banyak istilah yang lolos seleksi. <br>
 				Perhitungan sparse threshold bisa dijelaskan sebagai berikut: <br>
 				Ada 300 tweets yang akan dikomputasi.<br>
 				Bila sparse threshold yang diinginkan adalah 0.99 maka istilah dengan bobot 0.01 harus dihilangkan. <br>
-				Istilah dengan bobot 0.01 adalah istilah dengan frekuensi kemunculan : 300 tweets x 0.01 = 3 <br>
+				Istilah dengan bobot 0.01 adalah istilah dengan frekuensi kemunculan : <br>
+				300 tweets x 0.01 = 3 <br>
 				Itu artinya istilah yang muncul di 3 tweet atau kurang akan diabaikan sehingga yang dimaksud istilah trend hanyalah istilah yang muncul di lebih dari 3 tweet.
 			</div>
 		</div>
 
-		
-
-		
+		<div class="headingDocument">Panduan Keluaran<hr></div>
+		<div class="content">
+			<div class="longdesc">
+				<b>1. Klasifikasi</b> <br>
+				Memunculkan semua tweet yang berhasil diolah dan pengelompokannya ke dalam sentimen positif dan negatif. Sentimen adalah opini, emosi atau ulasan. Sentimen positif mengacu pada tweet yang sifatnya menyerukan kelebihan-kelebihan perguruan tinggi ataupun emosi positif seperti bangga dan senang. Sentimen negatif merupakan tweet yang menyebutkan kekurangan perguruan tinggi ataupun emosi negatif.<br>
+				<div>
+				<img src="class.png" width="60%" align="center" style="margin: 2% 0%;">
+				</div>
+				<b> 2. Analisis Faktor</b> <br>
+				Aplikasi akan berusaha menentukan istilah-istilah trend dalam kumpulan tweet yang diolah. Beberapa kumpulan istilah ini kemudian akan dikelompokan dalam golongan-golongan yang disebut 'faktor'. Faktor dihitung berdasarkan keterkaitan satu istilah dengan istilah lain. Keterkaitan ini dapat dihitung dari berapa kali suatu istilah muncul bersamaan dengan istilah lain dalam tweet yang sama. <br>
+				Proses analisis faktor ini akan memunculkan keluaran berupa kumpulan istilah trend dan frekuensi kemunculannya, juga dalam faktor mana saja istilah-istilah tersebut digolongkan.
+				<div>
+				<img src="factor.png" width="50%" align="center" style="margin: 2% 0%;">
+				</div>
+				Hal yang perlu diperhatikan dalam hasil analisis faktor adalah menemukan jumlah faktor yang tepat. Jika ditemukan faktor yang hanya menampung satu istilah, maka jumlah faktor bisa dikurangi untuk memindahkan istilah individu tersebut dalam faktor lain. Atau dengan mengurangi parameter sparse threshold agar menambah istilah lain untuk mengisi faktor tersebut. <br>
+				Hasil analisis faktor ini kemudian diinterpretasikan oleh pengguna dengan menelusuri kesamaan-kesamaan dalam tiap istilah yang ada pada suatu faktor. Contoh: <br>
+				Hasil sentimen negatif <br>
+				Faktor 1: kuliah, universitas, Bosan <br>
+				Faktor 2: mahal, uang, ndk, harga, gak <br>
+				Faktor 3: olympiad, dosen, voli, pol, cabor, babak <br>
+				Interpretasi <br>
+				Faktor 1: Perkuliahan <br>
+				Faktor 2: Keuangan <br>
+				Faktor 3: Kompetisi olahraga
+			</div>
+		</div>
+		<div class="col-sm-12 center-align">
+		<a class="btn btn-primary" href="http://127.0.0.1:6105" target="blank" role="button">Mulai Aplikasi</a>
+		</div>
 	</div>
 
+	
 
 	
 	
